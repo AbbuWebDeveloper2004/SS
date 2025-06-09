@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Smart System</title>
+  <link rel="stylesheet" href="index.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-...your integrity hash..." crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+</head>
+<body>
+  <!--Above Navbar-->
+  <div class="top-bar">
+  <!-- Left Side -->
+  <div class="left-section">
+    <a href="mailto:abbu69528@gmail.com" class="email">
+      <i class="fas fa-envelope"></i> Email: smartsystem@gmail.com
+    </a>
+    <a href="https://wa.me/919159977877" target="_blank" class="phone">
+      <i class="fas fa-phone"></i> Phone: 9042116396
+    </a>
+  </div>
+
+  <!-- Right Side -->
+  <div class="right-section">
+    <span>Opening Hours: 9 AM - 9 PM</span>
+    <div class="social-icons" style="display: flex; gap: 30px;">
+      <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
+      <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+      <a href="https://wa.me/919042116396" target="_blank"><i class="fab fa-whatsapp"></i></a>
+    </div>
+  </div>
+</div>
+
+  <!-- Navbar -->
+  <header class="navbar">
+    <div class="navbar-container">
+      <div class="logo">Smart System</div>
+      <div class="hamburger" id="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <nav class="nav-links" id="navLinks">
+        <a href="#home">Home</a>
+        <hr />
+        <a href="#about">About Us</a>
+        <hr />
+        <a href="#services">Services</a>
+        <hr />
+        <a href="#contact">Contact Us</a>
+      </nav>
+    </div>
+  </header>
+
+
+
+  <script >
+    // Toggle mobile nav
+const hamburger = document.getElementById('hamburger');
+const navLinks = document.getElementById('navLinks');
+
+hamburger.addEventListener('click', () => {
+  navLinks.classList.toggle('active');
+});
+
+// Sticky navbar background on scroll
+window.addEventListener('scroll', () => {
+  const navbar = document.querySelector('.navbar');
+  if (window.scrollY > 50) {
+    navbar.classList.add('scrolled');
+  } else {
+    navbar.classList.remove('scrolled');
+  }
+});
+
+
+
+  </script>
+<!--Hero Section-->
+<section id="home">
+<section id="hero" class="hero-slider">
+  <div class="slides">
+    <div class="slide active" style="background-image: url('Img/pc\ assembled\ board.jpg')"></div>
+      <div class="slide-text">
+  <h1>When others give up,<br> we step in</h1>
+  <a href="https://wa.me/919159977877? target="_blank" class="whatsapp-btn">Contact Us</a>
+</div>
+    </div>
+      </section>
+      </section>
+
+      <!-- Benefits-->
+       <section class="benefits-section">
+    <h2>Benefits You Get From Us</h2>
+    <div class="benefit-cards">
+      <div class="card" style="--delay: 0.30s">
+        <i class="fas fa-tools"></i>
+        <h3>Expert Technicians</h3>
+        <p>Our experienced team ensures top-notch service and accurate diagnostics.</p>
+      </div>
+      <div class="card" style="--delay: 0.45s">
+        <i class="fas fa-clock"></i>
+        <h3>Quick Turnaround</h3>
+        <p>We value your time and aim to deliver fast and efficient solutions.</p>
+      </div>
+      <div class="card" style="--delay: 0.60s">
+        <i class="fas fa-shield-alt"></i>
+        <h3>Reliable Service</h3>
+        <p>Trusted by many for consistent and dependable repairs and support.</p>
+      </div>
+      <div class="card" style="--delay: 0.75s">
+        <i class="fas fa-thumbs-up"></i>
+        <h3>Customer Satisfaction</h3>
+        <p>We prioritize your satisfaction with honest, affordable service.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sound effect -->
+  <audio id="punchSound" src="https://assets.codepen.io/3/swoosh.mp3" preload="auto"></audio>
+
+  <script>
+    const cards = document.querySelectorAll(".card");
+    const sound = document.getElementById("cardSound");
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const card = entry.target;
+
+            setTimeout(() => {
+              card.classList.add("visible");
+              sound.volume = 1.0; // Max volume (0 to 1)
+              sound.currentTime = 0;
+              sound.play();
+            }, parseFloat(card.style.getPropertyValue("--delay")) * 1000);
+
+            observer.unobserve(card); // Animate only once
+          }
+        });
+      },
+      {
+        threshold: 0.3,
+      }
+    );
+
+    cards.forEach((card) => observer.observe(card));
+  </script>
+<!--About-us-->
+  
+  <section class="about-section" id="about">
+    <h2>About Us</h2>
+
+    <!-- Block 1 -->
+    <div class="about-row">
+      <div class="about-text">
+        <h3>Who We Are</h3>
+        <p>Smart System repairs laptops, installs and fixes CCTV, repairs printers, handles networking, and assembles PC motherboards. We also sell products like mice, CCTV cameras, and keyboards. We focus on providing reliable and affordable services to keep your devices working well.</p>
+      </div>
+      <div class="about-image">
+        <img src="Img/Reparing.jpg" alt="Shop Image 1" />
+      </div>
+    </div>
+
+    <!-- Block 2 -->
+    <div class="about-row">
+      <div class="about-image">
+        <img src="Img/About-1.jpg" alt="Shop Image 2" />
+      </div>
+      <div class="about-text">
+        <h3>Why to Choose Us</h3>
+        <p>At Smart System, we deliver expert repairs and installations with care and precision. Our skilled technicians use quality parts and the latest tools to ensure your devices run smoothly. We offer fast, reliable service at affordable prices, backed by a commitment to customer satisfaction.</p>
+      </div>
+    </div>
+
+    <!-- Block 3 -->
+    <div class="about-row">
+      <div class="about-text" style="text-align: center;">
+        <h3>What We Can Fix</h3>
+        <ul style="list-style: none; padding-left: 0; margin: 20px auto 0; display: inline-block; text-align: left; font-size: 1.1rem; color: #333;">
+          <li style="margin-bottom: 12px; display: flex; align-items: center; justify-content: center;">
+            <i class="fas fa-laptop" style="color: black; margin-right: 10px; min-width: 24px;"></i>
+            Laptop 
+          </li>
+          <li style="margin-bottom: 12px; display: flex; align-items: center; justify-content: center;">
+            <i class="fas fa-network-wired" style="color: black; margin-right: 10px; min-width: 24px;"></i>
+            Networking Solutions
+          </li>
+          <li style="margin-bottom: 12px; display: flex; align-items: center; justify-content: center;">
+            <i class="fas fa-video" style="color: black; margin-right: 10px; min-width: 24px;"></i>
+            CCTV Installation & Repair
+          </li>
+          <li style="margin-bottom: 12px; display: flex; align-items: center; justify-content: center;">
+            <i class="fas fa-print" style="color: black; margin-right: 10px; min-width: 24px;"></i>
+            Printer 
+          </li>
+        </ul>
+      </div>
+      <div class="about-image">
+        <img src="Img/about-2.jpg" alt="Shop Image 3" />
+      </div>
+    </div>
+  </section>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const observerOptions = {
+        threshold: 0.1 // trigger when 10% of element is visible
+      };
+
+      const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+          if(entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target); // only animate once
+          }
+        });
+      }, observerOptions);
+
+      const targets = document.querySelectorAll('.about-text, .about-image');
+      targets.forEach(el => observer.observe(el));
+    });
+  </script>
+
+  <!--Services-->
+  <section class="services-section" id="services">
+    <h2 class="services-heading" id="services-heading">Our Services</h2>
+
+    <!-- Service 1 -->
+    <div class="service" id="service1">
+      <img src="img/Laptop Parts.jpg" alt="Laptop Service">
+      <div class="service-text">
+        <h3>Laptop Repair</h3>
+        <p>We handle hardware and software issues, screen replacement, performance upgrades, and virus removal for all major laptop brands.</p>
+      </div>
+    </div>
+
+    <!-- Service 2 -->
+    <div class="service reverse" id="service2">
+      <img src="img/network.jpg" alt="Networking">
+      <div class="service-text">
+        <h3>Networking Solutions</h3>
+        <p>From home to office, we set up reliable wired and wireless networks, configure routers, and troubleshoot connectivity problems.</p>
+      </div>
+    </div>
+
+    <!-- Service 3 -->
+    <div class="service" id="service3">
+      <img src="img/cctv.jpg" alt="CCTV">
+      <div class="service-text">
+        <h3>CCTV Installation</h3>
+        <p>Secure your property with professional CCTV setup, maintenance, and troubleshooting services tailored to your environment.</p>
+      </div>
+    </div>
+
+    <!-- Service 4 -->
+    <div class="service reverse" id="service4">
+      <img src="img/Printer.jpeg" alt="Printer Repair">
+      <div class="service-text">
+        <h3>Printer Repair</h3>
+        <p>We repair inkjet and laser printers, fix paper jams, connectivity issues, and provide cartridge solutions for all popular models.</p>
+      </div>
+    </div>
+
+    <!-- Service 5 -->
+    <div class="service" id="service5">
+      <img src="img/pc assembled board.jpg" alt="PC Assembly">
+      <div class="service-text">
+        <h3>PC Assembling</h3>
+        <p>Custom build desktops for gaming, business or personal use, using quality parts for performance, speed and reliability.</p>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    // Heading fade in on scroll
+const heading = document.getElementById('services-heading');
+const services = document.querySelectorAll('.service');
+
+const observerOptions = {
+  threshold: 0.2
+};
+
+const serviceObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.target.id === 'services-heading') {
+      if (entry.isIntersecting) heading.classList.add('visible');
+    } else {
+      const service = entry.target;
+      if (entry.isIntersecting) {
+        if (service.classList.contains('reverse')) {
+          service.classList.add('visible-right');
+        } else {
+          service.classList.add('visible-left');
+        }
+      }
+    }
+  });
+}, observerOptions);
+
+serviceObserver.observe(heading);
+services.forEach(service => serviceObserver.observe(service));
+
+  </script>
+
+  <!--Logo-->
+  <section class="brand-section">
+    <h2 id="brand-heading">Brands We Support</h2>
+
+    <div class="slider">
+      <div class="logos">
+        <a href="brands/dell.html"><img src="Img/Dell.svg" alt="Dell" /></a>
+        <a href="brands/hp.html"><img src="Img/hp.png" alt="HP" /></a>
+        <a href="brands/lenovo.html"><img src="Img/Lenova.png" alt="Lenovo" /></a>
+        <a href="brands/acer.html"><img src="Img/acer.webp" alt="Acer" /></a>
+        <a href="brands/asus.html"><img src="Img/Azus-2.png" alt="Asus" /></a>
+        <a href="brands/apple.html"><img src="Img/HV.webp" alt="Apple" /></a>
+        <a href="brands/apple.html"><img src="Img/Cp.webp" alt="Apple" /></a>
+        <a href="brands/apple.html"><img src="Img/Adhva.jpg" alt="Apple" /></a>
+
+        <!-- Repeat for smooth infinite loop -->
+        <a href="brands/dell.html"><img src="Img/Dell.svg" alt="Dell" /></a>
+        <a href="brands/hp.html"><img src="Img/hp.png" alt="HP" /></a>
+        <a href="brands/lenovo.html"><img src="Img/Lenova.png" alt="Lenovo" /></a>
+        <a href="brands/acer.html"><img src="Img/acer.webp" alt="Acer" /></a>
+        <a href="brands/asus.html"><img src="Img/Azus-2.png" alt="Asus" /></a>
+        <a href="brands/apple.html"><img src="Img/HV.webp" alt="Apple" /></a>
+        <a href="brands/apple.html"><img src="Img/Cp.webp" alt="Apple" /></a>
+        <a href="brands/apple.html"><img src="Img/Adhva.jpg" alt="Apple" /></a>
+
+
+      </div>
+    </div>
+  </section>
+
+  <script>
+    // Fade in heading on scroll
+    document.addEventListener('DOMContentLoaded', () => {
+  const brandHeading = document.getElementById('brand-heading');
+
+  const logoObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        brandHeading.classList.add('visible');  // Start animation
+      } else {
+        brandHeading.classList.remove('visible'); // Stop animation
+      }
+    });
+  }, {
+    threshold: 0.2
+  });
+
+  logoObserver.observe(brandHeading);
+});
+
+
+  </script>
+
+  <!--Footer-->
+  <footer class="footer">
+    <div class="footer-container">
+      <!-- Left Section -->
+      <div class="footer-left">
+        <div class="logo-name">
+          <img src="your-logo.png" alt="Logo" />
+          <h3>Smart System</h3>
+        </div>
+        <p>111, Palakkarai Main Rd, <br>Opposite to Wharehouse Bus Stop,
+          <br> Palakkarai,
+          <br> Tiruchirappalli,<br>
+           Tamil Nadu 620001
+          </p>
+        <br><p>Phone: +91 9159977877</p>
+      </div>
+
+      <!-- Right Section (Contact Form) -->
+      <div class="footer-right" id="contact">
+        <h4>Contact Us</h4>
+        <form class="contact-form" id="contactForm">
+          <input type="text" id="name" placeholder="Your Name" required />
+          <input type="email" id="email" placeholder="Your Email" required />
+          <textarea placeholder="Your Message" id="message"></textarea>
+          <button type="submit">Send</button>
+        </form>
+      </div>
+    </div>
+
+<div class="footer-bottom">
+  <!-- Page Links -->
+  <div class="footer-links">
+    <a href="#home">Home</a>
+    <a href="#about">About</a>
+    <a href="#services">Services</a>
+    <a href="#contact">Contact</a>
+  </div>
+
+  <!-- Social Icons (opposite aligned) -->
+  <div class="footer-social">
+    <a href="https://facebook.com" target="_blank" class="facebook"><i class="fab fa-facebook-f"></i></a>
+    <a href="https://instagram.com" target="_blank" class="instagram"><i class="fab fa-instagram"></i></a>
+    <a href="https://wa.me/your-number" target="_blank" class="whatsapp"><i class="fab fa-whatsapp"></i></a>
+  </div>
+</div>
+    <!-- Copyright -->
+    <div class="copyright">
+      © 2025 Company Name. All rights reserved.
+    </div>
+  </footer>
+  <script>
+  document.getElementById('contactForm').addEventListener('submit', function (e) {
+    e.preventDefault();
+
+    // Get input values
+    const name = document.getElementById('name').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const message = document.getElementById('message').value.trim();
+
+    // Format WhatsApp message
+    const whatsappMessage = `Name: ${name}%0AEmail: ${email}%0AMessage: ${message}`;
+
+    // Open WhatsApp link with the message
+    window.open(`https://wa.me/919159977877?text=${whatsappMessage}`, '_blank');
+  });
+</script>
+
+
+
+
+
+
+
+
+</body>
+</html>

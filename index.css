@@ -174,7 +174,7 @@ background: #fff ; /* Changed from transparent to white */
 @media (max-width: 480px) {
   .navbar-container {
     flex-wrap: nowrap;
-    padding: 15px 15px;
+    padding: 0px 15px;
     flex-direction: row; /* Force horizontal layout */
     align-items: center;  /* Align vertically */
     justify-content: space-between; /* Space out left and right */

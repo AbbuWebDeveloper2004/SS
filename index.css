@@ -63,6 +63,7 @@ body {
 .navbar {
   padding: 15px ;
   position: fixed;
+  
   width: 100%;
   background: transparent;
   z-index: 1;
@@ -71,7 +72,7 @@ body {
 }
 
 .navbar.scrolled {
-  bottom: 620px;
+  top: 0;
 background: #fff ; /* Changed from transparent to white */
   backdrop-filter: none; /* Optional: disable blur on white */
   box-shadow: 0 2px 10px rgba(0, 0, 0, 10.1); /* Optional shadow */

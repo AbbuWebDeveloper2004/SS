@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Mouse Products</title>
+  <style>
+    * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+/* GLOBAL RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+  overflow-x: hidden;
+}
+
+/* IMAGES */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* PREVENT STRETCHING */
+.container,
+.product-grid,
+.navbar {
+  max-width: 100%;
+}
+
+    body {
+      font-family: Arial, sans-serif;
+      padding: 40px 20px;
+      background: #f4f4f4;
+      margin: 0;
+    }
+
+    .scroll-navbar {
+      display: flex;
+      overflow-x: auto;
+      white-space: nowrap;
+      background: #f4f4f4;
+      border-bottom: 3px solid #ccc;
+      padding: 10px 0;
+      scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    .scroll-navbar::-webkit-scrollbar {
+      display: none;
+    }
+
+    .scroll-navbar a {
+      padding: 15px 20px;
+      text-decoration: none;
+      color: #333;
+      flex: 0 0 auto;
+      scroll-snap-align: start;
+    }
+
+    @media (min-width: 768px) {
+      .scroll-navbar {
+        justify-content: center;
+      }
+    }
+
+    @media (max-width: 767px) {
+      .scroll-navbar {
+        justify-content: flex-start;
+      }
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: auto;
+      padding: 0 16px;
+    }
+
+    h2 {
+      text-align: center;
+      margin: 60px 0 40px;
+    }
+
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 40px;
+      margin-bottom: 60px;
+    }
+
+    .product-card {
+      background: #fff;
+      border-radius: 8px;
+      padding: 15px;
+      text-align: center;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .product-card img {
+      width: 100%;
+      height: 150px;
+      object-fit: contain;
+    }
+
+    .product-card h3 {
+      margin: 10px 0;
+      font-size: 1.1rem;
+    }
+
+    .product-card .price {
+      color: #00897b;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    .btn {
+      background: #00897b;
+      color: white;
+      padding: 8px 14px;
+      border-radius: 5px;
+      text-decoration: none;
+      display: inline-block;
+      transition: background 0.3s;
+    }
+
+    .btn:hover {
+      background: #00695c;
+    }
+
+    @media (max-width: 500px) {
+      .product-grid {
+        justify-items: center;
+        gap: 30px;
+      }
+
+      .product-card {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Scroll Navbar -->
+  <nav class="scroll-navbar">
+    <a href="#">Mouse</a>
+    <a href="#">Keyboard</a>
+    <a href="#">CCTV</a>
+    <a href="#">Networking</a>
+    <a href="#">Accessories</a>
+  </nav>
+
+  <!-- Product Grid -->
+  <div class="container">
+    <h2>Mouse Products</h2>
+    <div class="product-grid">
+      <div class="product-card">
+        <img src="Img/Dell.jpg" alt="Dell Mouse" />
+        <h3>Dell</h3>
+        <p class="price">₹499</p>
+        <a href="#" class="btn buy-now" data-product="Dell Mouse">Contact Us</a>
+      </div>
+
+      <div class="product-card">
+        <img src="Img/Hp.webp" alt="HP Mouse" />
+        <h3>HP</h3>
+        <p class="price">₹899</p>
+        <a href="#" class="btn buy-now" data-product="HP Mouse">Contact Us</a>
+      </div>
+
+      <div class="product-card">
+        <img src="Img/Logitech.webp" alt="Logitech Mouse" />
+        <h3>Logitech</h3>
+        <p class="price">₹699</p>
+        <a href="#" class="btn buy-now" data-product="Logitech Mouse">Contact Us</a>
+      </div>
+
+      <div class="product-card">
+        <img src="Img/fingers.webp" alt="Fingers Mouse" />
+        <h3>Fingers</h3>
+        <p class="price">₹999</p>
+        <a href="#" class="btn buy-now" data-product="Fingers Mouse">Contact Us</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- WhatsApp Button Script -->
+  <script>
+    document.querySelectorAll('.buy-now').forEach(button => {
+      button.addEventListener('click', function (e) {
+        e.preventDefault();
+        const product = this.getAttribute('data-product');
+        const phone = '919159977877'; // Your WhatsApp number without +
+        const message = `Hi, I'd like to order the ${product}`;
+        const url = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
+        window.open(url, '_blank');
+      });
+    });
+  </script>
+</body>
+</html>

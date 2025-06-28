@@ -961,18 +961,18 @@ position: relative;
 
 
 /*Logo*/
+     /*Logo*/
      
-
-   .brand-section {
+.brand-section {
       text-align: center;
-      padding: 50px 20px;
+      padding: 60px 20px;
       background-color: #fff;
     }
 
     .brand-section h2 {
-      font-size: 2rem;
+      font-size: 2.5rem;
       color: black;
-      margin-bottom: 30px;
+      margin-bottom: 40px;
       opacity: 0;
       transform: translateY(20px);
       transition: all 0.6s ease;
@@ -991,19 +991,25 @@ position: relative;
     .brand-section h2.visible {
       opacity: 1;
       transform: translateY(0);
+      animation: pulse 3s infinite ease-in-out;
+    }
+
+    @keyframes pulse {
+      0% { transform: scale(1); opacity: 1; }
+      50% { transform: scale(1.05); opacity: 0.8; }
+      100% { transform: scale(1); opacity: 1; }
     }
 
     .slider {
       overflow: hidden;
       width: 100%;
-      background: #fff;
       padding: 20px 0;
     }
 
     .logos {
       display: flex;
       align-items: center;
-      animation: slide 8s linear infinite;
+      animation: slide 15s linear infinite;
       white-space: nowrap;
     }
 
@@ -1012,7 +1018,8 @@ position: relative;
       margin: 0 25px;
     }
 
-    .logos img {max-width: 120px;
+    .logos img {
+      max-width: 120px;
   max-height: 110px;
   width: auto;
   height: auto;
@@ -1037,41 +1044,33 @@ position: relative;
         transform: translateX(-50%);
       }
     }
-    @keyframes pulse {
-  0% { transform: scale(1); opacity: 1; }
-  50% { transform: scale(1.05); opacity: 0.8; }
-  100% { transform: scale(1); opacity: 1; }
-}
-
-#brand-heading.visible {
-  animation: pulse 3s infinite ease-in-out;
-}
-
 
     /* Responsive styles */
     @media (max-width: 768px) {
       .logos img {
         width: 70px;
         height: 70px;
-        margin: 0 15px;
+        padding: 6px;
       }
 
       .brand-section h2 {
-        font-size: 1.5rem;
+        font-size: 1.8rem;
       }
-      .logos a{
-        margin: 0 7px;
+
+      .logos a {
+        margin: 0 15px;
       }
     }
 
     @media (max-width: 480px) {
       .logos img {
-        width: 50px;
-        height: 50px;
-        margin: 0 10px;
+        width: 55px;
+        height: 55px;
+        padding: 4px;
       }
-      .logos a{
-        margin: 0 7px;
+
+      .logos a {
+        margin: 0 10px;
       }
     }
 /*Footer*/

@@ -1048,8 +1048,8 @@ position: relative;
     /* Responsive styles */
     @media (max-width: 768px) {
       .logos img {
-        width: 70px;
-        height: 70px;
+        width: 90px;
+        height: 90px;
         padding: 6px;
       }
 
@@ -1064,8 +1064,8 @@ position: relative;
 
     @media (max-width: 480px) {
       .logos img {
-        width: 55px;
-        height: 55px;
+        width: 75px;
+        height: 75px;
         padding: 4px;
       }
 
